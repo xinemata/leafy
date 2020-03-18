@@ -36,11 +36,6 @@ function showInfo(data, tabletop) {
         );
       }
     }
-    // if (data[i][columnName[3]] == checked) {
-    //   addElement(columnName[3], data[i][columnName[0]], data[i][columnName[1]]);
-    // } else if (data[i][columnName[4]] == checked) {
-    //   addElement(columnName[4], data[i][columnName[0]], data[i][columnName[1]]);
-    // }
   }
   // alert("Successfully processed!"); // check if data is imported
 }
@@ -57,60 +52,26 @@ function addButton(columnName) {
 }
 
 function addElement(columnName, person, url) {
-  const hashtag1 = "filterDiv";
-  const hashtag2 = columnName;
-  let hashtags = `${hashtag1} ${hashtag2}`;
-  let newDiv = document.createElement("div");
-  // newDiv.setAttribute("id", "myDiv");
-  newDiv.className = hashtags;
+  const hashtag1 = ["filterDiv"];
+  const hashtag2 = [columnName];
+  const hashtagArray = hashtag1.concat(hashtag2);
+  const hashtagString = hashtagArray.join(" ");
+  const newDiv = document.createElement("div");
+  newDiv.className = hashtagString;
+
+  // place individual link inside individual div
+  for (let i = 0; i < 1; i++) {
+    let link = document.createElement("a");
+    let linkContent = document.createTextNode(person);
+    link.appendChild(linkContent);
+    link.title = person;
+    link.href = url;
+    newDiv.appendChild(link);
+  }
   document.getElementsByClassName("container")[0].appendChild(newDiv);
-  addPerson(person, hashtags, url);
 }
-
-function addPerson(person, hashtags, url) {
-  // let name = document.createElement("p");
-  // name.textContent = person;
-  // document.getElementsByClassName(hashtags)[0].appendChild(name);
-
-  let link = document.createElement("a");
-  let linkContent = document.createTextNode(person);
-  link.appendChild(linkContent);
-  link.title = person;
-  link.href = url;
-  document.getElementsByClassName(hashtags)[0].appendChild(link);
-}
-
-// function addLink(){
-//   let link = document.createElement("a");
-//   link.textContent = "https://prettydarke.cool/";
-//   // document.getElementsByClassName(hashtags)[0].appendChild(name);
-
-//   document.body.insertBefore(name, link);
-// }
 
 window.addEventListener("DOMContentLoaded", init);
-
-//
-
-// document.body.onload = addElement;
-
-// function addElement() {
-//   // create a new div element
-//   var newDiv = document.createElement("div");
-//   // newDiv.setAttribute("id", "myDiv");
-//   newDiv.className = "notice";
-//   newDiv.style.display = "inline-block";
-//   // and give it some content
-//   var newContent = document.createTextNode("Hi there and greetings!");
-//   // add the text node to the newly created div
-//   newDiv.appendChild(newContent);
-//   // test case, append the div to the body
-//   document.body.appendChild(newDiv);
-
-//   // add the newly created element and its content into the DOM
-//   // var currentDiv = document.getElementById("div1");
-//   // document.body.insertBefore(newDiv, currentDiv);
-// }
 
 // filter script
 
