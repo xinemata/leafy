@@ -1,8 +1,11 @@
+// editable info
+
+const publicSpreadsheetUrl =
+  "https://docs.google.com/spreadsheets/d/1Q23ZnH7KHBHahFT65_9RisSu1Wk4gNOrowiprtxgE4A/edit?usp=sharing"; // change this to your own URL
+const sheetName = "Sheet1"; // this has to match your google doc sheet name. In Leafy, you can only use one sheet
+const punctuation = ","; // this changes the punctuation between the title and the description. In most cases you'd want to use "," or "-" or ":"
+
 // tableTop.js script
-
-var publicSpreadsheetUrl =
-  "https://docs.google.com/spreadsheets/d/1Q23ZnH7KHBHahFT65_9RisSu1Wk4gNOrowiprtxgE4A/edit?usp=sharing";
-
 function init() {
   Tabletop.init({
     key: publicSpreadsheetUrl,
@@ -13,7 +16,6 @@ function init() {
 
 function showInfo(data, tabletop) {
   const checked = "x";
-  const sheetName = "Sheet1";
   const columnArray = tabletop.sheets()[sheetName].columnNames;
   const columnName = [columnArray.length];
 
@@ -32,7 +34,8 @@ function showInfo(data, tabletop) {
         addElement(
           columnName[i],
           data[j][columnName[0]],
-          data[j][columnName[1]]
+          data[j][columnName[1]],
+          data[j][columnName[2]]
         );
       }
     }
@@ -41,8 +44,8 @@ function showInfo(data, tabletop) {
 }
 
 function addButton(columnName) {
-  let newButton = document.createElement("BUTTON");
-  let newButtonContent = document.createTextNode(columnName);
+  const newButton = document.createElement("BUTTON");
+  const newButtonContent = document.createTextNode(columnName);
   newButton.appendChild(newButtonContent);
   newButton.className = "btn";
   newButton.addEventListener("click", function() {
@@ -51,7 +54,7 @@ function addButton(columnName) {
   document.getElementById("myBtnContainer").appendChild(newButton);
 }
 
-function addElement(columnName, person, url) {
+function addElement(columnName, person, url, description) {
   const hashtag1 = ["filterDiv"];
   const hashtag2 = [columnName];
   const hashtagArray = hashtag1.concat(hashtag2);
@@ -66,7 +69,14 @@ function addElement(columnName, person, url) {
     link.appendChild(linkContent);
     link.title = person;
     link.href = url;
-    newDiv.appendChild(link);
+
+    let para = document.createElement("p");
+    let paraContent = document.createTextNode(`${punctuation} ${description}`);
+    para.appendChild(paraContent);
+
+    para.appendChild(link); // put <a> into <p>
+    link.after(paraContent); // put <p> description after <a>
+    newDiv.appendChild(para); // put <p> into newDiv
   }
   document.getElementsByClassName("container")[0].appendChild(newDiv);
 }

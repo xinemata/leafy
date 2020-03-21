@@ -2,30 +2,47 @@
 
 body {
   font-family: helvetica, arial, sans-serif;
+  background-color: #f5e2dc;
   margin: 2em;
+  font-size: 14px;
+}
+
+h1,
+.btn,
+p {
+  padding: 12px 16px;
+  margin: 2px;
+}
+
+.btn,
+.filterDiv {
+  border-radius: 12px;
+  background-color: #f1f1f1;
+  margin: 2px 2px;
 }
 
 h1 {
-  font-style: italic;
-  color: #373fff;
+/*   color: #373fff; */
 }
 
-a {
+a,
+p {
+  float: left;
+  display: inline-block;
   color: black;
+  font-size: 14px;
+  line-height: 18px;
 }
 
 .filterDiv {
   float: left;
-  background-color: #2196F3;
-  color: #ffffff;
   width: 100%;
-/*   text-align: center; */
-  margin: 2px;
   display: none;
 }
 
 .show {
-  display: block;
+  float: left;
+  display: inline-block;
 }
 
 .container {
@@ -35,10 +52,9 @@ a {
 
 /* Style the buttons */
 .btn {
+  font-size: 14px;
   border: none;
   outline: none;
-  padding: 12px 16px;
-  background-color: #f1f1f1;
   cursor: pointer;
 }
 
