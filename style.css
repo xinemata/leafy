@@ -16,13 +16,7 @@ p {
 
 .btn,
 .filterDiv {
-  border-radius: 12px;
-  background-color: #f1f1f1;
   margin: 2px 2px;
-}
-
-h1 {
-/*   color: #373fff; */
 }
 
 a,
@@ -32,6 +26,8 @@ p {
   color: black;
   font-size: 14px;
   line-height: 18px;
+  border-radius: 12px;
+  background-color: #f1f1f1;
 }
 
 .filterDiv {
@@ -52,6 +48,8 @@ p {
 
 /* Style the buttons */
 .btn {
+  border-radius: 12px;
+  background-color: #f1f1f1;
   font-size: 14px;
   border: none;
   outline: none;
