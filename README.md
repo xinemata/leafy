@@ -13,12 +13,8 @@ Leafy is built with [Tabletop.js](https://github.com/jsoma/tabletop) and adapts 
 
 # Examples built with Leafy
 
-
-[Database of Underrepresented artists in digital media](URL)
-
 [Basic minimal example](https://leafy-template.glitch.me/)
-
-
+[Weird Game-Making Tools](http://weird-game-tools.glitch.me/), compiled by @lee2sman
 
 # Getting Started
 

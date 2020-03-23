@@ -2,6 +2,7 @@
 
 const publicSpreadsheetUrl =
   "https://docs.google.com/spreadsheets/d/1Q23ZnH7KHBHahFT65_9RisSu1Wk4gNOrowiprtxgE4A/edit?usp=sharing"; // change this to your own URL
+const categoryStartNum = 3; // indicate at which column does the category start. Default is 3
 const sheetName = "Sheet1"; // this has to match your google doc sheet name. In Leafy, you can only use one sheet
 const punctuation = ","; // this changes the punctuation between the title and the description. In most cases you'd want to use "," or "-" or ":"
 
@@ -24,11 +25,11 @@ function showInfo(data, tabletop) {
   }
 
   // create sorting buttons
-  for (let j = 3; j < columnArray.length; j++) {
+  for (let j = categoryStartNum; j < columnArray.length; j++) {
     addButton(columnName[j]);
   }
 
-  for (let i = 3; i < columnArray.length; i++) {
+  for (let i = categoryStartNum; i < columnArray.length; i++) {
     for (let j = 0; j < data.length; j++) {
       if (data[j][columnName[i]] == checked) {
         addElement(
@@ -46,12 +47,24 @@ function showInfo(data, tabletop) {
 function addButton(columnName) {
   const newButton = document.createElement("BUTTON");
   const newButtonContent = document.createTextNode(columnName);
+
   newButton.appendChild(newButtonContent);
   newButton.className = "btn";
   newButton.addEventListener("click", function() {
     filterSelection(columnName);
+    btnOff(); // turns off all active buttons
+    newButton.classList.add("active"); // turn this button on
   });
   document.getElementById("myBtnContainer").appendChild(newButton);
+}
+
+function btnOff() {
+  let btnClassArray = document.getElementsByClassName("btn");
+  for (let i = 0; i < btnClassArray.length; i++) {
+    if (btnClassArray[i].classList.contains("active")) {
+      btnClassArray[i].classList.remove("active");
+    }
+  }
 }
 
 function addElement(columnName, person, url, description) {
@@ -69,10 +82,12 @@ function addElement(columnName, person, url, description) {
     link.appendChild(linkContent);
     link.title = person;
     link.href = url;
+    link.className = "itemLink";
 
     let para = document.createElement("p");
     let paraContent = document.createTextNode(`${punctuation} ${description}`);
     para.appendChild(paraContent);
+    para.className = "itemPara";
 
     para.appendChild(link); // put <a> into <p>
     link.after(paraContent); // put <p> description after <a>
@@ -84,17 +99,19 @@ function addElement(columnName, person, url, description) {
 window.addEventListener("DOMContentLoaded", init);
 
 // filter script
-
-filterSelection("all");
 function filterSelection(c) {
   var x, i;
   x = document.getElementsByClassName("filterDiv");
-  if (c == "all") c = "";
+  // if (c == "All") c = "";
   for (i = 0; i < x.length; i++) {
+    //     if(x[i].classList.contains("All")){
+    //       x[i].classList.add("show")
+    //     }
     w3RemoveClass(x[i], "show");
     if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
   }
-  console.log(c);
+
+  //   console.log(x[0].classList.contains("filterDiv"));
 }
 
 function w3AddClass(element, name) {
@@ -118,15 +135,4 @@ function w3RemoveClass(element, name) {
     }
   }
   element.className = arr1.join(" ");
-}
-
-// Add active class to the current button (highlight it)
-var btnContainer = document.getElementById("myBtnContainer");
-var btns = btnContainer.getElementsByClassName("btn");
-for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function() {
-    var current = document.getElementsByClassName("active");
-    current[0].className = current[0].className.replace(" active", "");
-    this.className += " active";
-  });
 }
