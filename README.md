@@ -2,7 +2,7 @@
 
 Leafy is an easy-to-use template designed to turn your google spreadsheet into a styled, sortable table on a website. 
 
-![Leafy example screenshot](https://cdn.glitch.com/a0713ae5-198b-4366-b7e9-e40b63c44f84%2FScreen%20Shot%202020-03-23%20at%2012.33.27%20AM.png?v=1584938013419)
+![Leafy example screenshot](https://cdn.glitch.com/a0713ae5-198b-4366-b7e9-e40b63c44f84%2FScreen%20Shot%202020-03-23%20at%2012.57.15%20AM.png?v=1584939475695)
 *Screenshot of example Leafy page*  
 
 - Built on [Tabletop.js](https://github.com/jsoma/tabletop), which lets you use google spreadsheet as your backend database. 
