@@ -4,45 +4,64 @@ body {
   font-family: helvetica, arial, sans-serif;
   background-color: #f5e2dc;
   margin: 2em;
+  padding: 2em;
   font-size: 14px;
 }
 
-h1,
 .btn,
+p.itemPara,
 p {
   padding: 12px 16px;
   margin: 2px;
 }
 
-.btn,
-.filterDiv {
-  margin: 2px 2px;
+h1,
+p {
+  padding: 12px 3px;
+  margin: 2px;
 }
 
 a,
 p {
-  float: left;
-  display: inline-block;
   color: black;
   font-size: 14px;
   line-height: 18px;
+}
+
+a.itemLink,
+p.itemPara {
+  float: left;
+  display: inline-block;
   border-radius: 12px;
   background-color: #f1f1f1;
 }
 
-.filterDiv {
+.filterDiv,
+.show {
   float: left;
   width: 100%;
+}
+
+.filterDiv,
+.show,
+.btn {
+  margin: 2px 2px;
+}
+
+.filterDiv {
   display: none;
 }
 
 .show {
-  float: left;
   display: inline-block;
 }
 
+#myBtnContainer {
+  margin-bottom: 20px;
+}
+
 .container {
-  margin-top: 20px;
+  margin-bottom: 20px;
   overflow: hidden;
 }
 
