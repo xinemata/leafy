@@ -102,16 +102,10 @@ window.addEventListener("DOMContentLoaded", init);
 function filterSelection(c) {
   var x, i;
   x = document.getElementsByClassName("filterDiv");
-  // if (c == "All") c = "";
   for (i = 0; i < x.length; i++) {
-    //     if(x[i].classList.contains("All")){
-    //       x[i].classList.add("show")
-    //     }
     w3RemoveClass(x[i], "show");
     if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
   }
-
-  //   console.log(x[0].classList.contains("filterDiv"));
 }
 
 function w3AddClass(element, name) {
