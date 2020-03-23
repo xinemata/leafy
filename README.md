@@ -2,19 +2,20 @@
 
 Leafy is an easy-to-use template designed to turn your google spreadsheet into a styled, sortable table on a website. 
 
-![Leafy example screenshot](URL)  
+![Leafy example screenshot](https://cdn.glitch.com/a0713ae5-198b-4366-b7e9-e40b63c44f84%2FScreen%20Shot%202020-03-23%20at%2012.33.27%20AM.png?v=1584938013419)
 *Screenshot of example Leafy page*  
 
-Use google spreadsheet as your backend database. Items in your spreadsheet can be tagged with multiple categories. Leafy takes this spreadsheet and generates a sortable list allowing you to filter by these categories. 
+- Built on [Tabletop.js](https://github.com/jsoma/tabletop), which lets you use google spreadsheet as your backend database. 
+- Use the spread sheet to generate a sortable list on your website.  
+- Sort the list through customized categories. Tag items in your spreadsheet with multiple categories.
 
-Leafy is made for educators and organizers, with the intention of small - large scale collaboration in mind. Build an ongoing list of readings, resources, to-dos, etc and distribute your content to the greater community. Making edits to the spreadsheet will automatically post these changes to your Leafy site.
-
-Leafy is built with [Tabletop.js](https://github.com/jsoma/tabletop) and adapts w3School's [filter element example](https://www.w3schools.com/howto/howto_js_filter_elements.asp) for the category sorting. 
+Leafy is made for educators and organizers, with the intention of small - large scale collaborations. Build an ongoing list of readings, resources, to-dos, etc and distribute your content to the greater community. Making edits to the spreadsheet will automatically post these changes to your Leafy site. 
 
 # Examples built with Leafy
 
 [Basic minimal example](https://leafy-template.glitch.me/)
-[Weird Game-Making Tools](http://weird-game-tools.glitch.me/), compiled by @lee2sman
+
+[Weird Game-Making Tools](http://weird-game-tools.glitch.me/), contributed by [@lee2sman](https://github.com/lee2sman)
 
 # Getting Started
 
@@ -27,9 +28,13 @@ Leafy is built with [Tabletop.js](https://github.com/jsoma/tabletop) and adapts 
 
 We're ready to connect the spreadsheet to our website. From here you could move forward by remixing the  [Leafy template](https://glitch.com/~leafy-template) hosted on Glitch, or  you could also [download the repository](https://github.com/xinemata/leafy/archive/master.zip) and work locally. 
 
-Now go to script.js, and look at the top section where it says `editable info`. Replace the URL following `const publicSpreadsheetUrl` with your own spreadsheet URL. Your spreadsheet should now be connected to your site. 
+Now go to script.js, and look at the top section where it says `editable info`:
 
-Yay!
+1. `const publicSpreadsheetUrl` replace this with your own spreadsheet URL. 
+1. `const categoryStartNum` let the program know where the categoy begins on the spreadsheet column. Default value is 3.
+1. `const sheetName` this has to match the name of your sheet. Default value is "Sheet 1". 
+1. `const punctuation` this changes the punctuation between the title and the description. 
+1. That's it!
 
 ![Leafy animation](https://cdn.glitch.com/a0713ae5-198b-4366-b7e9-e40b63c44f84%2Funnamed.gif?v=1584807328184)  
 
