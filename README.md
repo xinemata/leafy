@@ -17,6 +17,8 @@ Leafy is made for educators and organizers, with the intention of small - large 
 
 [Weird Game-Making Tools](http://weird-game-tools.glitch.me/), contributed by [@lee2sman](https://github.com/lee2sman)
 
+[Thesis during COVID](https://thesis-during-covid.glitch.me/), multiple contributors
+
 # Getting Started
 
 ## Set up a google spreadsheet
