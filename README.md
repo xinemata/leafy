@@ -19,6 +19,8 @@ Leafy is made for educators and organizers, with the intention of small - large 
 
 [Thesis during COVID](https://thesis-during-covid.glitch.me/), multiple contributors
 
+[Open source, experimental, and tiny tools roundup](https://tinytools.directory/), multiple contributors, compiled by [@everestpipkin](https://github.com/everestpipkin)
+
 # Getting Started
 
 ## Set up a google spreadsheet
